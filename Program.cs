@@ -10,7 +10,10 @@ namespace DateTime
         {
             function fn = new function();
 
-            fn.DateTimeOperations();
+            //fn.DateTimeOperations();
+            //fn.MathematicalOperations();
+            //fn.Enumeration();
+            fn.Series();
 
             Console.ReadLine();
         }

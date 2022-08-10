@@ -5,6 +5,7 @@ namespace DateTime
 {
     class function
     {
+        
 
         public void DateTimeOperations()
         {
@@ -82,6 +83,134 @@ namespace DateTime
 
 
             //TimeSpan
+        }
+
+        public void MathematicalOperations()
+        {
+            //Abs(int value)
+            //Gives Absolute Value
+            Console.WriteLine(Math.Abs(-1));
+            Console.WriteLine(Math.Abs(-9.223333));
+            Console.WriteLine(Math.Abs(245));
+
+            //Celling(double | decimal)
+            //Gives Whole Number (round to bigger whole number)
+            Console.WriteLine("1.1 Ceiling To ==> {0}", Math.Ceiling(1.1));
+            Console.WriteLine("1.5 Ceiling To ==> {0}", Math.Ceiling(1.5));
+            Console.WriteLine("1.7 Ceiling To ==> {0}", Math.Ceiling(1.7));
+
+            //Floor(double)
+            //Gives Whole Number (round to smaller whole number)
+            Console.WriteLine("1.1 Floor To ==> {0}", Math.Floor(1.1));
+            Console.WriteLine("1.5 Floor To ==> {0}", Math.Floor(1.5));
+            Console.WriteLine("1.7 Floor To ==> {0}", Math.Floor(1.7));
+
+            //Round(double | Float | Decimal)
+            //Gives Whole Number (round to closest whole number)
+            Console.WriteLine("1.1 Round To ==> {0}", Math.Round(1.1));
+            Console.WriteLine("1.5 Round To ==> {0}", Math.Round(1.5));
+            Console.WriteLine("1.7 Round To ==> {0}", Math.Round(1.7));
+
+            //Round(double | Float | Decimal)
+            //Gives Whole Number (round to closest whole number)
+            Console.WriteLine("1.156 Round To ==> {0}", Math.Round(1.156,0));
+            Console.WriteLine("1.556 Round To ==> {0}", Math.Round(1.556,1));
+            Console.WriteLine("1.756 Round To ==> {0}", Math.Round(1.756,2));
+
+            //Pow(double x, double y)
+            //The first parameter is the base, the second parameter is the exponent
+            Console.WriteLine("2 exponent of 2  ==> {0}", Math.Pow(2, 2));
+            Console.WriteLine("2 exponent of 3  ==> {0}", Math.Pow(2, 3));
+            Console.WriteLine("5 exponent of 2  ==> {0}", Math.Pow(5, 2));
+
+            //Sqrt(double)
+            //Gives sqrt of value
+            Console.WriteLine("Sqrt of 81  ==> {0}", Math.Sqrt(81));
+
+            //DivRem(int a, int b, out int k)
+            //The first parameter is the divide, the second parameter is the divisor, third parameter is remaining
+            
+            Console.WriteLine("10 divide 3 = {0} Remaining is = {1}", Math.DivRem(10, 3, out var k) , k.ToString());
+
+            //Sign(int)
+            //Returns 0 or 1 or -1 according to sign of integer
+            Console.WriteLine("Sign(-5) ==> {0}", Math.Sign(-5));
+            Console.WriteLine("Sign(5) ==> {0}", Math.Sign(5));
+            Console.WriteLine("Sign(0) ==> {0}", Math.Sign(0));
+
+
+
+
+
+
+
+
+        }
+
+        enum Gender
+        {
+            man,
+            woman
+        }
+        enum Aylar
+        { 
+            January = 1,
+            February = 2,
+            March = 3,
+            April = 4,
+            May = 5,
+            June = 6,
+            July = 7,
+            August = 8,
+            September = 9,
+            October = 10,
+            November = 11,
+            December = 12
+        }
+        enum jobs 
+        {
+            Engineer = 1,
+            Doctor = 2,
+            Architect = 3,
+            Lawyer = 4 
+        }
+        public void Enumeration()
+        {
+            //Enum is a short way of enumaration
+            Console.WriteLine("My Gender is {0} ", Gender.woman);
+            Console.WriteLine("Third month of the year is {0} ", (Aylar)3);
+
+            //Enumaration start with 0
+            //If you are not enumarate anything in an enum It is going to enumarate by itself anyway
+            Console.WriteLine("My Gender is {0} ", (Gender)1);
+            Console.WriteLine("First month of the year is {0} ", (Aylar)1);
+
+            //GetName(Type enum, object value)
+            Console.WriteLine("My job is {0}",Enum.GetName(typeof(jobs), 1));
+            Console.WriteLine("My job is {0}", Enum.GetName(typeof(jobs), 4));
+            Console.WriteLine("All Jobs");
+            string[] jobs = Enum.GetNames(typeof(jobs));
+            foreach (string m in jobs) Console.WriteLine(m);
+
+           
+
+        }
+        public void Arrays()
+        {
+            //Arrays stores in memory in a sequence (They have dimensions and a certain capacity)
+            //They are readable and changeable
+            //Member of an array is constant 
+            //If you try to add a new element in a array that has no space for a new item, It is going to be a error
+            //They can store single type of value
+
+            //One Dimensional Arrays veriTipi[] arrayName = new variableType[number of array]
+            string[] variable1 = new string[10];
+
+
+
+
+
+
         }
     }
 }
