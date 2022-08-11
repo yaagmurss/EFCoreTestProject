@@ -13,7 +13,7 @@ namespace DateTime
             //fn.DateTimeOperations();
             //fn.MathematicalOperations();
             //fn.Enumeration();
-            fn.Series();
+            fn.Arrays();
 
             Console.ReadLine();
         }

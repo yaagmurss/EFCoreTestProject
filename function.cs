@@ -204,13 +204,44 @@ namespace DateTime
             //They can store single type of value
 
             //One Dimensional Arrays veriTipi[] arrayName = new variableType[number of array]
-            string[] variable1 = new string[10];
+            Console.Title = "Arrays";
+            string[] pdlanguage = new string[10];
 
+            pdlanguage[0] = "c#";
+            pdlanguage[1] = "Java";
+            pdlanguage[2] = "c";
+            pdlanguage[3] = "delphi";
 
+            int[] numbers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+            int[] number = new int[8]{0, 1, 2, 3, 4, 5, 6, 7,};
+
+            //class presence is constant
+            Console.Write("Please enter the class presence : ");
+            int classPresence = Convert.ToInt32(Console.ReadLine());
+
+            string[] studentName = new string[classPresence];            
+            int[] scores = { 45, 55, 65 };            
+
+            for(int i=0; i<=classPresence-1; i++)
+            {
+                Console.Write("{0}. Students name  : ",i);
+                studentName[i] = Console.ReadLine();
+
+            }
+            Console.WriteLine("---------------------------------------------------------------");
+
+            for (int i = 0; i <= scores.Length - 1; i++)
+            {
+                Console.WriteLine("{0}'s grade is {1}", studentName[i], scores[i]);
+
+            }
 
 
 
 
         }
+
+       
     }
 }
