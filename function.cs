@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Linq;
+using System.Xml.Linq;
+using System.Collections.Generic;
+using System.Data;
+using System.Text.RegularExpressions;
 
 
 namespace DateTime
@@ -237,11 +242,115 @@ namespace DateTime
 
             }
 
+            Console.WriteLine("---------------------------------------------------------------");
+
+            string[] departure = { "Software", "HR", "Finance" };
+            Console.WriteLine("Departure that i work is {0}",departure[0]);
+
+            double[] grades = new double[3] {55.5, 56.5, 65.5};
+            Console.WriteLine("Grade that i got is {0}", grades[1]);
+
+            Console.WriteLine("---------------------------------------------------------------");
+
+            
+            string[] person = { "yagmur", "burak", "aysel", "mustafa", "yasar", "ebru" };
+            //If you want to produce random number in order to find who is gonna win 
+            //You need to produce a random number between arrays start and end index
+
+            Random rnd = new Random();
+            int line = rnd.Next(0, person.Length + 1);
+            Console.WriteLine("Luck person is {0}", person[line]);
+
+            //Lenght returns number of elements that array has
+            Console.WriteLine("array of person length is {0}", person.Length);
+
+            //Rank returns size of the array
+            Console.WriteLine("array of person rank is {0}", person.Rank);
+
+        }
+        public void deneme()
+        {
+            XDocument doc = XDocument.Load("C:/Users/200741/Desktop/Response_type3.xml");
+            XNamespace ns3 = "http://isbank.com/FinancialMgmt/CustCreditDecisioning/CMAFinancialsIntegration/Service/V1";
+            XNamespace ns2 = "http://isbank.com/FinancialMgmt/CustCreditDecisioning/Schema/KYPSharedTypes/V1";
+            decimal b = 0.0m;
+
+            List<string> list = new List<string> { "331", "431", "500", "501" };
+
+            foreach (var element in list)
+            {
+                var query = (from node in doc.Descendants(ns3 + "mizanRawDataList")
+                             where node.Element(ns3 + "accountParentCode").Value == element
+                             select node).ToList();
+                foreach (var q in query)
+                {
+
+                    switch (element)
+                    {
+                        case "331":                            
+                            if (q.Element(ns3 + "accountLevel").Value == "1") {b = Math.Round(Convert.ToDecimal(q.Element(ns3 + "balanceClaim").Value));}
+                            break;
+                        case "431":
+                            if (q.Element(ns3 + "accountLevel").Value == "1") { b = Math.Round(Convert.ToDecimal(q.Element(ns3 + "balanceClaim").Value)); }
+                            break;
+                        case "500":
+                            if (q.Element(ns3 + "accountLevel").Value == "1") { b = Math.Round(Convert.ToDecimal(q.Element(ns3 + "balanceClaim").Value)); }
+                            break;
+                        case "501":
+                            if (q.Element(ns3 + "accountLevel").Value == "1") { b = Math.Round(Convert.ToDecimal(q.Element(ns3 + "balanceDept").Value)); }
+                            break;
+
+                    }
+                }
+
+
+            }
+        }
+        public void MultiDimensionalArrays()
+        {
+            //One dimensional Arrays have one row but multiple column
+            //Multidimensional Arrays have multiple rows and multiple column (x, y coordinates)
+
+            Console.Title = "MultiDimensionalArrays";
+
+            Console.WriteLine("----------------------------Matrix Arrays-----------------------------------");
+
+            //Number of elements vertically and horizontally is constant
+            //We can think about Matrix as a table that has multiple rows and columns
+            // dataType[,] arrayName = new dataType[row, column] 
+            // string[,] array = new string[3,2] ==> has three rows  and two columns
+            // array[0][0] ==> first row and first column
+            // array[0][1] ==> first row and second column
+            // array[2][1] ==> third row and second column
+            // array[0,0] = "Furkan" adds variable into the arrays (first row and first column)
+            double[,] table1 = new double[2, 2];
+            table1[0, 0] = 55;
+            table1[0, 1] = 56;
+            table1[1, 0] = 57;
+            table1[1, 1] = 58;
+            
+            double[,] table2 = { { 55, 56 }, { 57, 58 } };
+
+            Console.WriteLine("----------------------------Jagged Arrays-----------------------------------");
+
+            //If every elemen of array act like different array It calls jaggedArrays
+            //dataType[][] arrayName = new dataType[capacity][];
+
+            int[][] jaggedArray = new int[2][];
+            jaggedArray[0] = new int[2];
+            jaggedArray[1] = new int[3];
+
+            string[][] jarray = new string[2][];
+            jarray[0] = new string[2];
+            jarray[0][0] = "Ali";
+            jarray[0][1] = "Veli";
+
+
 
 
 
         }
 
-       
+
     }
 }

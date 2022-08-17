@@ -13,7 +13,9 @@ namespace DateTime
             //fn.DateTimeOperations();
             //fn.MathematicalOperations();
             //fn.Enumeration();
-            fn.Arrays();
+            //fn.Arrays();
+            //fn.deneme();
+            fn.MultiDimensionalArrays();
 
             Console.ReadLine();
         }
