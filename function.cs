@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Linq;
 using System.Xml.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Text.RegularExpressions;
 
-
 namespace DateTime
 {
     class function
-    {
-        
+    {        
 
         public void DateTimeOperations()
         {
@@ -89,7 +88,6 @@ namespace DateTime
 
             //TimeSpan
         }
-
         public void MathematicalOperations()
         {
             //Abs(int value)
@@ -151,7 +149,6 @@ namespace DateTime
 
 
         }
-
         enum Gender
         {
             man,
@@ -350,6 +347,150 @@ namespace DateTime
 
 
         }
+        public void ArrayClass()
+        {
+
+            Console.Title = "Arrays";
+            //System.Array is for various array operations
+
+            //Clear(Array, int index, int lenght) Clears arrays content
+            string[] names = { "Yagmur", "Burak", "İsmail", "Gamze", "Volkan" };
+
+            Console.WriteLine("Original Array:");
+            foreach (var n in names) { Console.WriteLine(n); }
+
+            Console.WriteLine("------");
+            //Array.Sort(Array array)
+            Console.WriteLine("If we use Array.Sort(names):");
+            Array.Sort(names);
+            foreach (string s in names) { Console.WriteLine(s); }
+
+            Console.WriteLine("------");            
+            Console.WriteLine("If we use Array.Clear(names, 1, 2):");           
+            Array.Clear(names, 1, 2);
+            foreach (var n in names) { Console.WriteLine(n); }
+
+            Console.WriteLine("--------------------------------------");
+
+            //Copy(Array sourceArray, Array destinationArray, int lenght) Clears arrays content
+            //Array.Copy
+            char[] oldArray = new char[5] {'a', 'b', 'c', 'd', 'e'};
+            char[] newArray = new char[3];
+
+            Array.Copy(oldArray, newArray, 3);
+            foreach (char c in oldArray) { Console.WriteLine(c); }
+            Console.WriteLine("------");
+            Console.WriteLine("If we use Array.Copy(oldArray, newArray, 3)");
+            Console.WriteLine("------");
+            foreach (char c in newArray){ Console.WriteLine(c); }
+
+
+            Console.WriteLine("--------------------------------------");
+
+            //Array.Reverse(Array array)
+            int[] arrayName = { 51,62,43,14,95,96 };
+            Console.WriteLine("Original version of array");
+            foreach(int i in arrayName) { Console.Write(i + "-"); }
+            Array.Sort(arrayName);
+            Console.WriteLine( Environment.NewLine + "Sorted version of array");
+            foreach (int i in arrayName) { Console.Write(i + "-"); }
+            Array.Reverse(arrayName);
+            Console.WriteLine(Environment.NewLine + "Reversed version of array");
+            foreach (int i in arrayName) { Console.Write(i + "-"); }
+
+
+
+            Console.WriteLine(Environment.NewLine + "--------------------------------------");
+
+            //Array.IndexOf(Array array, object value)
+            //Array.LastIndexOf(Array array, object value)  same with the IndexOf just search from last ındex
+
+            int[] randomVariables = new int[100];
+            int indexer = 0;
+            Random rnd = new Random();
+
+            while (true)
+            {
+                int rndNumber = rnd.Next(1, 1000);
+                if (Array.IndexOf(randomVariables, rndNumber) == -1)
+                {
+                    randomVariables[indexer] = rndNumber; //creates number between 1,10
+                    indexer += 1;
+                }
+                if (indexer >= 99) { break; }
+                               
+            }
+
+            foreach(var number in randomVariables) { Console.Write(number + "-"); }
+
+
+            Console.WriteLine(Environment.NewLine + "--------------------------------------");
+
+            //Array.Resize(ref T[] array, int newSize)
+            //Resizes the array
+
+            string[] strArray = new string[5] {"xx", "yy", "zz", "ss", "aa"};
+            int newSize = strArray.Length + 2;
+
+            
+
+            Array.Resize(ref strArray, newSize);
+
+            strArray[5] = "aaa";
+            strArray[5] = "kkk";
+
+            string[] testArray = new string[3] { "1", "2", "3" };
+
+            //If resize the array yu can add more than array's first lengt
+            try
+            {
+                testArray[3] = "xxx";
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Array.Resize(ref testArray, 4);
+                testArray[3] = "xxx";
+            }
+
+
+
+
+
+
+
+        }
+        public void Collections()
+        {
+            //Collections works just like arrays but they are more complicated and their size are changeable
+            //Arraylist creates a collection that is object Type. Array is is container that can contain anything that is object Type
+
+            Console.Title = "Collections";
+
+            char[] charArray = { 'a','b','c'};
+            ArrayList collection = new ArrayList(); //unlimited
+
+            collection.Add("yağmur"); // 0. indis
+            collection.Add(123); // 1. indis
+            collection.Add(true); // 2. indis
+
+            foreach(var col in collection) { Console.WriteLine(col); }
+
+            Console.WriteLine("--------------------------------------");
+
+            //AddRange
+            collection.AddRange(charArray);
+            foreach (var col in collection) { Console.WriteLine(col); }
+
+            Console.WriteLine("--------------------------------------");
+
+            object[] array = collection.ToArray();
+            foreach (var col in array) { Console.WriteLine(col); }
+
+
+
+        }
+
+
 
 
     }
