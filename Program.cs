@@ -6,6 +6,7 @@ namespace DateTime
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             function fn = new function();
@@ -17,10 +18,16 @@ namespace DateTime
             //fn.deneme();
             //fn.MultiDimensionalArrays();
             //fn.ArrayClass();
-            fn.Collections();
+            //fn.Collections();
+            fn.Methods();
+            fn.RecursiveMethds(5);
+            
+
 
             Console.ReadLine();
         }
+       
+
     }
 }
 

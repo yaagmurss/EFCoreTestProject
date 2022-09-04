@@ -489,6 +489,96 @@ namespace DateTime
 
 
         }
+        public void Methods()
+        {
+            //By using methods you can accomplishcode saving
+            //you ca call a method any time you want by writing one time 
+            //Console.WriteLine console ==> sınıf writeline ==> method
+
+            //Every project needs an main method
+
+            //Writing every time a code piece that works same or similar to others is a waste of time.
+            //Instead of that you can use methods to code saving
+
+            // Class Function represent a class
+            //Every C# project needs an Main Method (Every project that you done is compile from ***Main Method***)
+
+            //C:\Users\200741\source\repos\DateTime\ScreenShots\ss1.PNG
+            //C:\Users\200741\source\repos\DateTime\ScreenShots\ss2.PNG
+            //You can see "Program" title that represent class that we work
+            //If you Look at the solution Explorer yo can see the "Program.cs" item that maintain "Main Methods"
+            //static void Main (string[] args)
+            //Bu methodun tanımında bulnan static sözcüğü methodun statik olduğunu, kullanılması için ilgili sınıfın nesne örneğine ihtiaç duymayacağını belirler
+
+
+            //VOİD
+            //Another keyword is to "void" word that clears what type of method is
+            //Some methods doesnt return any object or value.This kind of methods calls "void type methods"
+
+            //There is void method that can not take any parameter
+            // <Access Modifiers><void><Method Name>(){<codes>}
+            //Another keyword to call a method in Main Method is "static" keyword
+            //If cant define our methos as Static we cannot call it in main method
+
+            // There is void method that can not take any parameter
+            //Parameters can be variable, array or a class
+            //One or more parameters can be used
+            // <Acces Modifiers><void><Method Name>(object parameter1, object parameter2){<codes>}
+
+            //VALUE RETURNING METHODS
+            //Some methods returns a value to the place that they call
+            //Programmers decide what type of value that she/he returns
+            //Vlue returning methods can take parameter or not
+            //Returning process done with "Return" keyword
+
+            //value returning methods return value by using "Return" keyword
+            //Returning value can be a variable, class or value
+            //Both void and return can be used but It doesnt return any object
+            //Returns causes  compieler  to leave the method
+
+            //RETURN WITHOUT PARAMETER
+            //<Acces Modifiers>< data Type ><Method Name> (){<codes><Return>}
+
+
+            //RETURN WITH PARAMETER
+            //<Acces Modifiers><data Type><Method Name> (object parameter1, object parameter2){<codes><Return>}
+
+            //Call By Value / Call By Reference (????)
+
+
+            //Overloading
+            //If you determine more than 1 method with the same name It calls overloading
+            //public int Topla(int a, int b) { return a + b; }
+            //public int Topla(int a, int b, int c) { return a + b; }
+            //public double Topla(double a, double b) { return a + b; }
+
+            //Params(???)
+
+
+
+
+
+
+        }
+        public void RecursiveMethds(int a)
+        {
+            if (a <= 10) 
+            { 
+                Console.WriteLine(a);
+                a++;
+                RecursiveMethds(a);
+            }
+
+            
+        }
+
+        
+
+
+
+
+
+
 
 
 
