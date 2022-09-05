@@ -572,13 +572,22 @@ namespace DateTime
             
         }
 
-        
+        public void Classes()
+        {
+            //An application consist multiple classes each responsible for a particular behaviour
+            //And all these classes togeether will provide the expected output application
+            //Object : an instanse of a class that resides in memory
+           
+            var Person = new Person();
+            Person.Name = "Yagmur";
+            Person.Introduce("Burak");
 
 
 
 
 
 
+        }
 
 
 

@@ -1,9 +1,18 @@
 ﻿using System;
-using System.Linq;
-using System.Collections.Generic;
 
 namespace DateTime
 {
+
+
+
+    class Person
+    {
+        public string Name;
+        public void Introduce(string str)
+        {
+            Console.WriteLine("Hi {0} ! My name is {1}", str, Name);
+        }
+    }
     class Program
     {
 
@@ -19,14 +28,18 @@ namespace DateTime
             //fn.MultiDimensionalArrays();
             //fn.ArrayClass();
             //fn.Collections();
-            fn.Methods();
-            fn.RecursiveMethds(5);
-            
+            //fn.Methods();
+            //fn.RecursiveMethds(5);
+            //fn.Classes();
+
+            var customer = new Customer();
+            Console.WriteLine("Customer id is : {0} Customer names is {1} ", customer.Id, customer.Name);
+
 
 
             Console.ReadLine();
-        }
-       
+        }   
+
 
     }
 }
